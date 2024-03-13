@@ -9,16 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
   @StateObject var userManager = UserManager.shared
-  @State var onboardingFinished = false
   
   var body: some View {
     VStack {
-      if onboardingFinished {
+      if userManager.firebaseUser != nil {
         RootView()
       } else {
-        OnboardingView(onFinish: {
-          onboardingFinished = true
-        })
+        OnboardingView()
       }
     }
     .environmentObject(userManager)
@@ -27,7 +24,6 @@ struct ContentView: View {
 
 struct OnboardingView: View {
   @EnvironmentObject var userManager: UserManager
-  var onFinish: () -> Void
   
   @State var currentPageIndex: Int = 0
   @State var username: String = ""
@@ -74,7 +70,9 @@ struct OnboardingView: View {
   var loginPage: some View {
     VStack {
       Text("Last Slide :)")
-      Button("Done") { onFinish() }
+      Button("LOGIN") {
+        userManager.loginAnonym()
+      }
     }
   }
   
@@ -88,7 +86,7 @@ struct RootView: View {
   
   var body: some View {
     VStack {
-      Text("Hi, \(userManager.username) 🎉")
+      Text("Hi, \(userManager.firebaseUser?.uid ?? "NO USER ID") 🎉")
         .font(.headline)
     }
   }

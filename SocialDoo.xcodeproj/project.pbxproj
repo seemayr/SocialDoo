@@ -24,6 +24,7 @@
 		B40AC7792BA0870300D81D13 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B40AC7782BA0870300D81D13 /* FirebaseStorage */; };
 		B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40AC77A2BA087D600D81D13 /* UserManager.swift */; };
 		B43AAAA22BA1E3A7006C18AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */; };
+		B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B40AC75C2BA080F800D81D13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B40AC77A2BA087D600D81D13 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				B40AC7592BA080F800D81D13 /* Assets.xcassets */,
 				B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */,
 				B40AC75B2BA080F800D81D13 /* Preview Content */,
+				B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */,
 			);
 			path = SocialDoo;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */,
+				B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */,
 				B40AC7582BA080F800D81D13 /* ContentView.swift in Sources */,
 				B40AC7562BA080F800D81D13 /* SocialDooApp.swift in Sources */,
 			);
