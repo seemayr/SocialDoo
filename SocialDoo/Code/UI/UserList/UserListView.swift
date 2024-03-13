@@ -15,7 +15,9 @@ struct UserListView: View {
     VStack {
       List {
         ForEach(allUsers, id: \.id) { user in
-          Text(user.username)
+          NavigationLink(user.username, destination: {
+            ProfileView(profileUser: user)
+          })
         }
       }
     }

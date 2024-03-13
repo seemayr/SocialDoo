@@ -10,10 +10,12 @@ import Foundation
 class SocialUser: ObservableObject {
   var id: String
   var username: String
+  @Published var following: [String]
   
-  init(id: String, username: String) {
+  init(id: String, username: String, following: [String]) {
     self.id = id
     self.username = username
+    self.following = following
   }
 }
 
@@ -22,7 +24,8 @@ extension SocialUser {
     guard let doc else { return nil }
     
     let username = (doc["username"] as? String) ?? "No Username"
+    let following = (doc["following"] as? [String]) ?? []
     
-    return SocialUser(id: withId, username: username)
+    return SocialUser(id: withId, username: username, following: following)
   }
 }

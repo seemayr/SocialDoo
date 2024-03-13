@@ -17,6 +17,11 @@ class UserManager: ObservableObject {
   @Published var username: String = ""
   @Published var user: SocialUser?
   
+  var userDocumentReference: DocumentReference? {
+    guard let firebaseUser else { return nil }
+    return Firestore.firestore().collection("User").document(firebaseUser.uid)
+  }
+  
   var firebaseUser: User? {
     didSet {
       reloadUser()
@@ -46,18 +51,21 @@ class UserManager: ObservableObject {
   
   func createUser() {
     guard let firebaseUser else { return }
-    
-    let docRef = Firestore.firestore().collection("User").document(firebaseUser.uid)
+    guard let userDocumentReference else { return }
     
     let userData: [String: Any] = [
       "username": username
     ]
     
-    docRef.setData(userData) { error in
+    userDocumentReference.setData(userData) { error in
       if let error {
         print(error.localizedDescription)
       } else {
-        self.user = SocialUser(id: firebaseUser.uid, username: self.username)
+        self.user = SocialUser(
+          id: firebaseUser.uid,
+          username: self.username,
+          following: []
+        )
       }
     }
     
@@ -73,9 +81,9 @@ class UserManager: ObservableObject {
       return
     }
     
-    let docRef = Firestore.firestore().collection("User").document(firebaseUser.uid)
+    guard let userDocumentReference else { return }
     
-    docRef.getDocument(completion: { snapshot, err in
+    userDocumentReference.getDocument(completion: { snapshot, err in
       
       if let err {
         print(err.localizedDescription)
@@ -109,6 +117,28 @@ class UserManager: ObservableObject {
     } catch let err {
       print(err.localizedDescription)
       return []
+    }
+  }
+  
+  func triggerFollow(for userID: String) {
+    guard let user else { return }
+    guard let userDocumentReference else { return }
+    
+    if user.following.contains(userID) {
+      // FOLLOWING
+//      user.following = user.following.filter({ $0 != userID })
+      user.following.removeAll(where: { $0 == userID })
+    } else {
+      // NOT FOLLOWING
+      user.following.append(userID)
+    }
+    
+    userDocumentReference.updateData([
+      "following": user.following
+    ]) { error in
+      if let error {
+        print(error.localizedDescription)
+      }
     }
   }
 }
