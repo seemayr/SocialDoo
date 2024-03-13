@@ -11,7 +11,6 @@ struct OnboardingView: View {
   @EnvironmentObject var userManager: UserManager
   
   @State var currentPageIndex: Int = 0
-  @State var username: String = ""
   
   var body: some View {
     TabView(selection: $currentPageIndex) {
@@ -49,6 +48,7 @@ struct OnboardingView: View {
         .cornerRadius(8)
       
       Button("Okay!") { nextPage() }
+        .disabled(userManager.username.isEmpty)
     }
   }
   

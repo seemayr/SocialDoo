@@ -20,6 +20,7 @@ struct SocialDooApp: App {
     WindowGroup {
       if let user = userManager.user {
         RootView()
+          .environmentObject(user)
       } else {
         OnboardingView()
       }

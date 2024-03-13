@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct RootView: View {
+  @EnvironmentObject var user: SocialUser
   @EnvironmentObject var userManager: UserManager
   
   var body: some View {
-    VStack {
-      Text("Hi, \(userManager.user?.username ?? "NO USER NAME") 🎉")
-        .font(.headline)
+    NavigationStack {
+      VStack {
+        Text("Hi, \(user.username) 🎉")
+          .font(.headline)
+        
+        NavigationLink("AllUsers", destination: {
+          UserListView()
+        })
+        
+        Button("Logout") {
+          userManager.logout()
+        }
+      }
     }
   }
 }

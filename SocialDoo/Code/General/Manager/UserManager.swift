@@ -14,6 +14,7 @@ class UserManager: ObservableObject {
     activateAuthListener()
   }
   
+  @Published var username: String = ""
   @Published var user: SocialUser?
   
   var firebaseUser: User? {
@@ -21,8 +22,6 @@ class UserManager: ObservableObject {
       reloadUser()
     }
   }
-  
-  @Published var username: String = ""
   
   func activateAuthListener() {
     Auth.auth().addStateDidChangeListener { auth, user in
@@ -51,15 +50,19 @@ class UserManager: ObservableObject {
     let docRef = Firestore.firestore().collection("User").document(firebaseUser.uid)
     
     let userData: [String: Any] = [
-      "username": "alex"
+      "username": username
     ]
     
     docRef.setData(userData) { error in
       if let error {
         print(error.localizedDescription)
       } else {
-        self.user = SocialUser(id: firebaseUser.uid, username: "alex")
+        self.user = SocialUser(id: firebaseUser.uid, username: self.username)
       }
+    }
+    
+    Task {
+      await getAllUsers()
     }
     
   }
@@ -87,9 +90,25 @@ class UserManager: ObservableObject {
       
       guard let snapshotData = snapshot.data() else { return }
       
-      self.user = SocialUser(id: firebaseUser.uid, username: (snapshotData["username"] as? String) ?? "No username")
-//      let username: String? = snapshotData["username"] as? String
-//      print("❤️ \(username ?? "No Username found")")
+      self.user = SocialUser.fromDocument(snapshotData, withId: firebaseUser.uid)
     })
+  }
+  
+  func getAllUsers() async -> [SocialUser] {
+    let docRef = Firestore.firestore().collection("User")
+    
+    do {
+      let allDocs = try await docRef.getDocuments()
+      
+      let allUsers: [SocialUser] = allDocs.documents.compactMap({ doc in
+        return SocialUser.fromDocument(doc.data(), withId: doc.documentID)
+      })
+      
+      return allUsers
+      
+    } catch let err {
+      print(err.localizedDescription)
+      return []
+    }
   }
 }

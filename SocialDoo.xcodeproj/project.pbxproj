@@ -26,6 +26,8 @@
 		B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */; };
 		B43AAAAA2BA1F6F6006C18AB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */; };
 		B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAAB2BA1F6FE006C18AB /* RootView.swift */; };
+		B43AAAB02BA1FA45006C18AB /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAAF2BA1FA45006C18AB /* UserListView.swift */; };
+		B43AAAB22BA20083006C18AB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAB12BA20083006C18AB /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUser.swift; sourceTree = "<group>"; };
 		B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		B43AAAAB2BA1F6FE006C18AB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B43AAAAF2BA1FA45006C18AB /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		B43AAAB12BA20083006C18AB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,6 @@
 				B40AC7552BA080F800D81D13 /* SocialDooApp.swift */,
 				B43AAAA82BA1F6DF006C18AB /* General */,
 				B43AAAA72BA1F6DC006C18AB /* UI */,
-				B40AC77A2BA087D600D81D13 /* UserManager.swift */,
-				B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -120,7 +122,9 @@
 		B43AAAA72BA1F6DC006C18AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */,
+				B43AAAB52BA20098006C18AB /* Profile */,
+				B43AAAB42BA20090006C18AB /* UserList */,
+				B43AAAB32BA20088006C18AB /* Onboarding */,
 				B43AAAAB2BA1F6FE006C18AB /* RootView.swift */,
 			);
 			path = UI;
@@ -129,8 +133,50 @@
 		B43AAAA82BA1F6DF006C18AB /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B43AAAAE2BA1F958006C18AB /* Entities */,
+				B43AAAAD2BA1F949006C18AB /* Manager */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		B43AAAAD2BA1F949006C18AB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B40AC77A2BA087D600D81D13 /* UserManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B43AAAAE2BA1F958006C18AB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B43AAAB32BA20088006C18AB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B43AAAB42BA20090006C18AB /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				B43AAAAF2BA1FA45006C18AB /* UserListView.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		B43AAAB52BA20098006C18AB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B43AAAB12BA20083006C18AB /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,9 +267,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */,
+				B43AAAB02BA1FA45006C18AB /* UserListView.swift in Sources */,
 				B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */,
 				B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */,
 				B43AAAAA2BA1F6F6006C18AB /* OnboardingView.swift in Sources */,
+				B43AAAB22BA20083006C18AB /* ProfileView.swift in Sources */,
 				B40AC7562BA080F800D81D13 /* SocialDooApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
