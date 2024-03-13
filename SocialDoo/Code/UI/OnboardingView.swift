@@ -1,26 +1,11 @@
 //
-//  ContentView.swift
+//  OnboardingView.swift
 //  SocialDoo
 //
-//  Created by Dominik Seemayr on 12.03.24.
+//  Created by Dominik Seemayr on 13.03.24.
 //
 
 import SwiftUI
-
-struct ContentView: View {
-  @StateObject var userManager = UserManager.shared
-  
-  var body: some View {
-    VStack {
-      if userManager.firebaseUser != nil {
-        RootView()
-      } else {
-        OnboardingView()
-      }
-    }
-    .environmentObject(userManager)
-  }
-}
 
 struct OnboardingView: View {
   @EnvironmentObject var userManager: UserManager
@@ -79,19 +64,4 @@ struct OnboardingView: View {
   func nextPage() {
     currentPageIndex += 1
   }
-}
-
-struct RootView: View {
-  @EnvironmentObject var userManager: UserManager
-  
-  var body: some View {
-    VStack {
-      Text("Hi, \(userManager.firebaseUser?.uid ?? "NO USER ID") 🎉")
-        .font(.headline)
-    }
-  }
-}
-
-#Preview {
-    ContentView()
 }

@@ -45,6 +45,25 @@ class UserManager: ObservableObject {
     try? Auth.auth().signOut()
   }
   
+  func createUser() {
+    guard let firebaseUser else { return }
+    
+    let docRef = Firestore.firestore().collection("User").document(firebaseUser.uid)
+    
+    let userData: [String: Any] = [
+      "username": "alex"
+    ]
+    
+    docRef.setData(userData) { error in
+      if let error {
+        print(error.localizedDescription)
+      } else {
+        self.user = SocialUser(id: firebaseUser.uid, username: "alex")
+      }
+    }
+    
+  }
+  
   func reloadUser() {
     guard let firebaseUser else {
       user = nil
@@ -55,6 +74,22 @@ class UserManager: ObservableObject {
     
     docRef.getDocument(completion: { snapshot, err in
       
+      if let err {
+        print(err.localizedDescription)
+      }
+      
+      guard let snapshot else { return }
+      
+      if !snapshot.exists {
+        self.createUser()
+        return
+      }
+      
+      guard let snapshotData = snapshot.data() else { return }
+      
+      self.user = SocialUser(id: firebaseUser.uid, username: (snapshotData["username"] as? String) ?? "No username")
+//      let username: String? = snapshotData["username"] as? String
+//      print("❤️ \(username ?? "No Username found")")
     })
   }
 }

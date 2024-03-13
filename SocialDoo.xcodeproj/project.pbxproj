@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B40AC7562BA080F800D81D13 /* SocialDooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40AC7552BA080F800D81D13 /* SocialDooApp.swift */; };
-		B40AC7582BA080F800D81D13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40AC7572BA080F800D81D13 /* ContentView.swift */; };
 		B40AC75A2BA080F800D81D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40AC7592BA080F800D81D13 /* Assets.xcassets */; };
 		B40AC75D2BA080F800D81D13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40AC75C2BA080F800D81D13 /* Preview Assets.xcassets */; };
 		B40AC7652BA0870300D81D13 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B40AC7642BA0870300D81D13 /* FirebaseAnalytics */; };
@@ -25,17 +24,20 @@
 		B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40AC77A2BA087D600D81D13 /* UserManager.swift */; };
 		B43AAAA22BA1E3A7006C18AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */; };
 		B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */; };
+		B43AAAAA2BA1F6F6006C18AB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */; };
+		B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAAB2BA1F6FE006C18AB /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B40AC7522BA080F800D81D13 /* SocialDoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialDoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40AC7552BA080F800D81D13 /* SocialDooApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialDooApp.swift; sourceTree = "<group>"; };
-		B40AC7572BA080F800D81D13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B40AC7592BA080F800D81D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B40AC75C2BA080F800D81D13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B40AC77A2BA087D600D81D13 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUser.swift; sourceTree = "<group>"; };
+		B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B43AAAAB2BA1F6FE006C18AB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +81,8 @@
 		B40AC7542BA080F800D81D13 /* SocialDoo */ = {
 			isa = PBXGroup;
 			children = (
-				B40AC7552BA080F800D81D13 /* SocialDooApp.swift */,
-				B40AC7572BA080F800D81D13 /* ContentView.swift */,
-				B40AC77A2BA087D600D81D13 /* UserManager.swift */,
-				B40AC7592BA080F800D81D13 /* Assets.xcassets */,
-				B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */,
-				B40AC75B2BA080F800D81D13 /* Preview Content */,
-				B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */,
+				B43AAAA52BA1F6BE006C18AB /* Code */,
+				B43AAAA62BA1F6C3006C18AB /* Resource */,
 			);
 			path = SocialDoo;
 			sourceTree = "<group>";
@@ -96,6 +93,44 @@
 				B40AC75C2BA080F800D81D13 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B43AAAA52BA1F6BE006C18AB /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				B40AC7552BA080F800D81D13 /* SocialDooApp.swift */,
+				B43AAAA82BA1F6DF006C18AB /* General */,
+				B43AAAA72BA1F6DC006C18AB /* UI */,
+				B40AC77A2BA087D600D81D13 /* UserManager.swift */,
+				B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		B43AAAA62BA1F6C3006C18AB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B40AC7592BA080F800D81D13 /* Assets.xcassets */,
+				B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */,
+				B40AC75B2BA080F800D81D13 /* Preview Content */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B43AAAA72BA1F6DC006C18AB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */,
+				B43AAAAB2BA1F6FE006C18AB /* RootView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B43AAAA82BA1F6DF006C18AB /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +222,8 @@
 			files = (
 				B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */,
 				B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */,
-				B40AC7582BA080F800D81D13 /* ContentView.swift in Sources */,
+				B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */,
+				B43AAAAA2BA1F6F6006C18AB /* OnboardingView.swift in Sources */,
 				B40AC7562BA080F800D81D13 /* SocialDooApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +357,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SocialDoo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SocialDoo/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 986K2G8Q3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -351,7 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SocialDoo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SocialDoo/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 986K2G8Q3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

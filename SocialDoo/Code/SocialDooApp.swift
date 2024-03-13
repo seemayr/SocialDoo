@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct SocialDooApp: App {
+  @StateObject var userManager = UserManager.shared
   
   init() {
     FirebaseApp.configure()
@@ -17,7 +18,12 @@ struct SocialDooApp: App {
   
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      if let user = userManager.user {
+        RootView()
+      } else {
+        OnboardingView()
+      }
     }
+    .environmentObject(userManager)
   }
 }
