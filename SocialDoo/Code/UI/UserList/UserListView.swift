@@ -13,12 +13,10 @@ struct UserListView: View {
   
   var body: some View {
     VStack {
-      List {
-        ForEach(allUsers, id: \.id) { user in
-          NavigationLink(user.username, destination: {
-            ProfileView(profileUser: user)
-          })
-        }
+      List(allUsers, id: \.id) { user in
+        NavigationLink(user.username, destination: {
+          ProfileView(profileUser: user)
+        })
       }
     }
     .task {
