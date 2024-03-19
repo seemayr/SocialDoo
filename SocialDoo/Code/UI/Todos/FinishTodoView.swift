@@ -7,6 +7,7 @@
 
 import PhotosUI
 import SwiftUI
+import FirebaseStorage
 
 struct CameraView: UIViewControllerRepresentable {
   @Binding var selectedImage: UIImage?
@@ -43,6 +44,8 @@ struct CameraView: UIViewControllerRepresentable {
 struct FinishTodoView: View {
   @EnvironmentObject var router: Router
   @Environment(\.modelContext) var modelContext
+  @EnvironmentObject var user: SocialUser
+  @EnvironmentObject var userManager: UserManager
   
   let todo: Todo
   
@@ -64,6 +67,20 @@ struct FinishTodoView: View {
           .resizable()
           .scaledToFit()
           .frame(width: 200, height: 200)
+        
+        Button("POST") {
+          uploadImage(pickedImage) { path in
+            self.pickedImage = nil
+            
+            let post = SocialPost(
+              byUserId: user.id,
+              caption: todo.caption,
+              mainImageReference: path
+            )
+            
+            userManager.createPost(post)
+          }
+        }
       }
     }
     .onChange(of: pickedImage) {
@@ -72,6 +89,29 @@ struct FinishTodoView: View {
     .fullScreenCover(isPresented: $showCamera, content: {
       CameraView(selectedImage: $pickedImage)
         .background(Color.black)
+    })
+  }
+  
+  func uploadImage(_ image: UIImage, onFinished: @escaping  (String) -> Void) {
+    image.prepareThumbnail(of: CGSize(width: 400, height: 400), completionHandler: { compressedImage in
+      
+      guard let compressedImage, let jpegImage = compressedImage.jpegData(compressionQuality: 0.8) else { return }
+      
+      let imageFilename = "\(UUID().uuidString).jpg"
+      
+      let imageRef = Storage.storage().reference().child("User/\(user.id)/Posts/\(imageFilename)")
+        
+      imageRef.putData(jpegImage) { metadata, error in
+        if let error {
+          print(error.localizedDescription)
+        }
+        
+        guard let metadata else { return }
+        
+        onFinished(imageFilename)
+        print("UPLOAD SUCCESS")
+      }
+      
     })
   }
 }

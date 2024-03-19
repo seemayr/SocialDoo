@@ -32,6 +32,7 @@
 		B46C2C422BA99D9E000B3590 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C412BA99D9E000B3590 /* TodoListView.swift */; };
 		B46C2C442BA9A0EE000B3590 /* FinishTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C432BA9A0EE000B3590 /* FinishTodoView.swift */; };
 		B46C2C492BA9AACD000B3590 /* StackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C482BA9AACD000B3590 /* StackRouter.swift */; };
+		B46C2C4B2BA9D03A000B3590 /* SocialPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C4A2BA9D03A000B3590 /* SocialPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B46C2C412BA99D9E000B3590 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		B46C2C432BA9A0EE000B3590 /* FinishTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTodoView.swift; sourceTree = "<group>"; };
 		B46C2C482BA9AACD000B3590 /* StackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRouter.swift; sourceTree = "<group>"; };
+		B46C2C4A2BA9D03A000B3590 /* SocialPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */,
+				B46C2C4A2BA9D03A000B3590 /* SocialPost.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				B46C2C442BA9A0EE000B3590 /* FinishTodoView.swift in Sources */,
 				B43AAAB02BA1FA45006C18AB /* UserListView.swift in Sources */,
 				B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */,
+				B46C2C4B2BA9D03A000B3590 /* SocialPost.swift in Sources */,
 				B46C2C3F2BA99C6F000B3590 /* Todo.swift in Sources */,
 				B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */,
 				B46C2C422BA99D9E000B3590 /* TodoListView.swift in Sources */,
