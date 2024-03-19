@@ -21,6 +21,10 @@ struct RootView: View {
           Text("All Users")
         })
         
+        NavigationLink(value: Router.Destination.feedView, label: {
+          Text("FEED")
+        })
+        
         NavigationLink(value: Router.Destination.todoList, label: {
           Text("Todo List")
         })

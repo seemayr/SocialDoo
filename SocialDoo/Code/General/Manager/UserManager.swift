@@ -143,8 +143,6 @@ class UserManager: ObservableObject {
   }
   
   func createPost(_ post: SocialPost) {
-    guard let user else { return }
-    
     let postData = post.asDocument()
     let postRef = Firestore.firestore().collection("Post").document(post.postId)
     

@@ -25,6 +25,8 @@ struct StackRouter<Content: View>: View {
             ProfileView(profileUser: user)
           case .userList:
             UserListView()
+          case .feedView:
+            FeedView()
           }
         }
     }
@@ -48,5 +50,6 @@ class Router: ObservableObject {
     case userList
     case finishTodo(Todo)
     case profileView(SocialUser)
+    case feedView
   }
 }
