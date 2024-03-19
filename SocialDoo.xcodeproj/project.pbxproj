@@ -28,6 +28,9 @@
 		B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAAB2BA1F6FE006C18AB /* RootView.swift */; };
 		B43AAAB02BA1FA45006C18AB /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAAF2BA1FA45006C18AB /* UserListView.swift */; };
 		B43AAAB22BA20083006C18AB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAB12BA20083006C18AB /* ProfileView.swift */; };
+		B46C2C3F2BA99C6F000B3590 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C3E2BA99C6F000B3590 /* Todo.swift */; };
+		B46C2C422BA99D9E000B3590 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C412BA99D9E000B3590 /* TodoListView.swift */; };
+		B46C2C442BA9A0EE000B3590 /* FinishTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C432BA9A0EE000B3590 /* FinishTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		B43AAAAB2BA1F6FE006C18AB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B43AAAAF2BA1FA45006C18AB /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		B43AAAB12BA20083006C18AB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B46C2C3E2BA99C6F000B3590 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		B46C2C412BA99D9E000B3590 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		B46C2C432BA9A0EE000B3590 /* FinishTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		B43AAAA72BA1F6DC006C18AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B46C2C402BA99D94000B3590 /* Todos */,
 				B43AAAB52BA20098006C18AB /* Profile */,
 				B43AAAB42BA20090006C18AB /* UserList */,
 				B43AAAB32BA20088006C18AB /* Onboarding */,
@@ -133,6 +140,7 @@
 		B43AAAA82BA1F6DF006C18AB /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B46C2C3C2BA99C5E000B3590 /* Database */,
 				B43AAAAE2BA1F958006C18AB /* Entities */,
 				B43AAAAD2BA1F949006C18AB /* Manager */,
 			);
@@ -177,6 +185,31 @@
 				B43AAAB12BA20083006C18AB /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B46C2C3C2BA99C5E000B3590 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B46C2C3D2BA99C68000B3590 /* Models */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		B46C2C3D2BA99C68000B3590 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B46C2C3E2BA99C6F000B3590 /* Todo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B46C2C402BA99D94000B3590 /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				B46C2C412BA99D9E000B3590 /* TodoListView.swift */,
+				B46C2C432BA9A0EE000B3590 /* FinishTodoView.swift */,
+			);
+			path = Todos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +300,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */,
+				B46C2C442BA9A0EE000B3590 /* FinishTodoView.swift in Sources */,
 				B43AAAB02BA1FA45006C18AB /* UserListView.swift in Sources */,
 				B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */,
+				B46C2C3F2BA99C6F000B3590 /* Todo.swift in Sources */,
 				B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */,
+				B46C2C422BA99D9E000B3590 /* TodoListView.swift in Sources */,
 				B43AAAAA2BA1F6F6006C18AB /* OnboardingView.swift in Sources */,
 				B43AAAB22BA20083006C18AB /* ProfileView.swift in Sources */,
 				B40AC7562BA080F800D81D13 /* SocialDooApp.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import Firebase
 
 @main
@@ -26,5 +27,6 @@ struct SocialDooApp: App {
       }
     }
     .environmentObject(userManager)
+    .modelContainer(for: [Todo.self])
   }
 }

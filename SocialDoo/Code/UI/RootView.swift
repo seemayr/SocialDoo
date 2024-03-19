@@ -21,6 +21,10 @@ struct RootView: View {
           UserListView()
         })
         
+        NavigationLink("My Todos", destination: {
+          TodoListView()
+        })
+        
         Button("Logout") {
           userManager.logout()
         }
