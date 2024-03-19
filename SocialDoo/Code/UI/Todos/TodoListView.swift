@@ -18,9 +18,7 @@ struct TodoListView: View {
     ScrollView {
       VStack {
         ForEach(allTodos) { todo in
-          NavigationLink(destination: {
-            FinishTodoView(todo: todo)
-          }, label: {
+          NavigationLink(value: Router.Destination.finishTodo(todo), label: {
             Text(todo.caption)
           })
         }

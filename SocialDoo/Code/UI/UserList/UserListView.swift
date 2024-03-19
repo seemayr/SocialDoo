@@ -14,8 +14,8 @@ struct UserListView: View {
   var body: some View {
     VStack {
       List(allUsers, id: \.id) { user in
-        NavigationLink(user.username, destination: {
-          ProfileView(profileUser: user)
+        NavigationLink(value: Router.Destination.profileView(user), label: {
+          Text(user.username)
         })
       }
     }

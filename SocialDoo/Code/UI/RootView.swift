@@ -12,17 +12,17 @@ struct RootView: View {
   @EnvironmentObject var userManager: UserManager
   
   var body: some View {
-    NavigationStack {
+    StackRouter() {
       VStack {
         Text("Hi, \(user.username) 🎉")
           .font(.headline)
         
-        NavigationLink("AllUsers", destination: {
-          UserListView()
+        NavigationLink(value: Router.Destination.userList, label: {
+          Text("All Users")
         })
         
-        NavigationLink("My Todos", destination: {
-          TodoListView()
+        NavigationLink(value: Router.Destination.todoList, label: {
+          Text("Todo List")
         })
         
         Button("Logout") {
