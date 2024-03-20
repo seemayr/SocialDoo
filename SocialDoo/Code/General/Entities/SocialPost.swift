@@ -36,18 +36,19 @@ class SocialPost {
   }
 }
 
+// MARK: - Firestore Document Convert
 extension SocialPost {
-  static func fromDocument(_ doc: QueryDocumentSnapshot) -> SocialPost? {
-    let documentData = doc.data()
+  static func fromDocument(_ doc: DocumentSnapshot) -> SocialPost? {
+    guard let documentData = doc.data() else { return nil }
     
     let postId = doc.documentID
-    guard let userId = doc["byUserId"] as? String else { return nil }
-    guard let caption = doc["caption"] as? String else { return nil }
-    guard let createdAt = doc["createdAt"] as? Timestamp else { return nil }
+    guard let userId = documentData["byUserId"] as? String else { return nil }
+    guard let caption = documentData["caption"] as? String else { return nil }
+    guard let createdAt = documentData["createdAt"] as? Timestamp else { return nil }
     
     
-    let latestModification = doc["latestModification"] as? Timestamp
-    let mainImageRef = doc["mainImageReference"] as? String
+    let latestModification = documentData["latestModification"] as? Timestamp
+    let mainImageRef = documentData["mainImageReference"] as? String
     
     return SocialPost(
       postId: postId,

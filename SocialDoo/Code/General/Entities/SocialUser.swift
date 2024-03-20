@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class SocialUser: ObservableObject, Equatable {
   static func == (lhs: SocialUser, rhs: SocialUser) -> Bool {
@@ -23,23 +24,34 @@ class SocialUser: ObservableObject, Equatable {
   }
 }
 
-// MARK: - HASHABLE
-extension SocialUser: Hashable {
-  func hash(into hasher: inout Hasher) {
-    // Hash only the ID of the group:
-    // Ensures that the hash value remains stable,
-    // regardless of any changes to the group's mutable properties.
-    hasher.combine(id)
+
+// MARK: - Firestore Document Convert
+extension SocialUser {
+  static func fromDocument(_ doc: DocumentSnapshot) -> SocialUser? {
+    guard let documentData = doc.data() else { return nil }
+    
+    let username = documentData["username"] as? String ?? "Unnamed"
+    let following = documentData["following"] as? [String] ?? []
+    
+    return SocialUser(id: doc.documentID, username: username, following: following)
+  }
+  
+  func asDocument() -> [String: Any] {
+    let document: [String: Any] = [
+      "username": self.username,
+      "following": self.following
+    ]
+    
+    return document
   }
 }
 
-extension SocialUser {
-  static func fromDocument(_ doc: [String: Any]?, withId: String) -> SocialUser? {
-    guard let doc else { return nil }
-    
-    let username = (doc["username"] as? String) ?? "No Username"
-    let following = (doc["following"] as? [String]) ?? []
-    
-    return SocialUser(id: withId, username: username, following: following)
+// MARK: - HASHABLE
+extension SocialUser: Hashable {
+  func hash(into hasher: inout Hasher) {
+    // Hash only the ID of the User:
+    // Ensures that the hash value remains stable for the same users,
+    // regardless of any changes to the users's mutable properties.
+    hasher.combine(id)
   }
 }

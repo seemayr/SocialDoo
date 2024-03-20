@@ -16,7 +16,10 @@ struct CameraView: UIViewControllerRepresentable {
   
   func makeUIViewController(context: Context) -> UIImagePickerController {
     let imagePicker = UIImagePickerController()
-    imagePicker.sourceType = .camera
+    
+//    imagePicker.sourceType = .camera
+    imagePicker.sourceType = .photoLibrary
+    
     imagePicker.delegate = context.coordinator
     return imagePicker
   }
@@ -50,13 +53,10 @@ struct FinishTodoView: View {
   let todo: Todo
   
   @State var pickedImage: UIImage?
-  
-  @State var postText: String = ""
   @State var showCamera = false
   
   var body: some View {
     VStack {
-      TextField("Say something about your todo..", text: $postText)
       
       Button("POST IMAGE") {
         showCamera = true
@@ -69,13 +69,15 @@ struct FinishTodoView: View {
           .frame(width: 200, height: 200)
         
         Button("POST") {
-          uploadImage(pickedImage) { path in
+          userManager.uploadPostImage(pickedImage) { filePath in
+            guard let filePath else { return }
+            
             self.pickedImage = nil
             
             let post = SocialPost(
               byUserId: user.id,
               caption: todo.caption,
-              mainImageReference: path
+              mainImageReference: filePath
             )
             
             userManager.createPost(post)
@@ -92,26 +94,5 @@ struct FinishTodoView: View {
     })
   }
   
-  func uploadImage(_ image: UIImage, onFinished: @escaping  (String) -> Void) {
-    image.prepareThumbnail(of: CGSize(width: 400, height: 400), completionHandler: { compressedImage in
-      
-      guard let compressedImage, let jpegImage = compressedImage.jpegData(compressionQuality: 0.8) else { return }
-      
-      let imageFilename = "\(UUID().uuidString).jpg"
-      
-      let imageRef = Storage.storage().reference().child("User/\(user.id)/Posts/\(imageFilename)")
-        
-      imageRef.putData(jpegImage) { metadata, error in
-        if let error {
-          print(error.localizedDescription)
-        }
-        
-        guard let metadata else { return }
-        
-        onFinished(imageFilename)
-        print("UPLOAD SUCCESS")
-      }
-      
-    })
-  }
+  
 }

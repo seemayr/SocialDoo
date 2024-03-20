@@ -22,6 +22,10 @@
 		B40AC7772BA0870300D81D13 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = B40AC7762BA0870300D81D13 /* FirebaseRemoteConfig */; };
 		B40AC7792BA0870300D81D13 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B40AC7782BA0870300D81D13 /* FirebaseStorage */; };
 		B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40AC77A2BA087D600D81D13 /* UserManager.swift */; };
+		B40EEDD52BAAEE65001034E6 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40EEDD42BAAEE65001034E6 /* PostView.swift */; };
+		B40EEDD92BAAEE83001034E6 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40EEDD82BAAEE83001034E6 /* FeedViewModel.swift */; };
+		B40EEDDB2BAB1961001034E6 /* Practise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40EEDDA2BAB1961001034E6 /* Practise.swift */; };
+		B40EEDDE2BAB1A35001034E6 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B40EEDDD2BAB1A35001034E6 /* SFSafeSymbols */; };
 		B43AAAA22BA1E3A7006C18AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */; };
 		B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */; };
 		B43AAAAA2BA1F6F6006C18AB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */; };
@@ -42,6 +46,9 @@
 		B40AC7592BA080F800D81D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B40AC75C2BA080F800D81D13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B40AC77A2BA087D600D81D13 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		B40EEDD42BAAEE65001034E6 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		B40EEDD82BAAEE83001034E6 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		B40EEDDA2BAB1961001034E6 /* Practise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practise.swift; sourceTree = "<group>"; };
 		B43AAAA12BA1E3A7006C18AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B43AAAA32BA1EA7C006C18AB /* SocialUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUser.swift; sourceTree = "<group>"; };
 		B43AAAA92BA1F6F6006C18AB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -67,6 +74,7 @@
 				B40AC7712BA0870300D81D13 /* FirebaseFunctions in Frameworks */,
 				B40AC76B2BA0870300D81D13 /* FirebaseCrashlytics in Frameworks */,
 				B40AC7692BA0870300D81D13 /* FirebaseAuth in Frameworks */,
+				B40EEDDE2BAB1A35001034E6 /* SFSafeSymbols in Frameworks */,
 				B40AC7652BA0870300D81D13 /* FirebaseAnalytics in Frameworks */,
 				B40AC76D2BA0870300D81D13 /* FirebaseDynamicLinks in Frameworks */,
 				B40AC7792BA0870300D81D13 /* FirebaseStorage in Frameworks */,
@@ -141,6 +149,7 @@
 				B43AAAB42BA20090006C18AB /* UserList */,
 				B43AAAB32BA20088006C18AB /* Onboarding */,
 				B43AAAAB2BA1F6FE006C18AB /* RootView.swift */,
+				B40EEDDA2BAB1961001034E6 /* Practise.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -232,7 +241,9 @@
 		B46C2C4C2BA9D6DD000B3590 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				B40EEDD82BAAEE83001034E6 /* FeedViewModel.swift */,
 				B46C2C4D2BA9D6EC000B3590 /* FeedView.swift */,
+				B40EEDD42BAAEE65001034E6 /* PostView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -265,6 +276,7 @@
 				B40AC7742BA0870300D81D13 /* FirebasePerformance */,
 				B40AC7762BA0870300D81D13 /* FirebaseRemoteConfig */,
 				B40AC7782BA0870300D81D13 /* FirebaseStorage */,
+				B40EEDDD2BAB1A35001034E6 /* SFSafeSymbols */,
 			);
 			productName = SocialDoo;
 			productReference = B40AC7522BA080F800D81D13 /* SocialDoo.app */;
@@ -296,6 +308,7 @@
 			mainGroup = B40AC7492BA080F800D81D13;
 			packageReferences = (
 				B40AC7632BA0870300D81D13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B40EEDDC2BAB1A35001034E6 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = B40AC7532BA080F800D81D13 /* Products */;
 			projectDirPath = "";
@@ -324,10 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40EEDD52BAAEE65001034E6 /* PostView.swift in Sources */,
 				B40AC77B2BA087D600D81D13 /* UserManager.swift in Sources */,
 				B46C2C442BA9A0EE000B3590 /* FinishTodoView.swift in Sources */,
 				B43AAAB02BA1FA45006C18AB /* UserListView.swift in Sources */,
+				B40EEDDB2BAB1961001034E6 /* Practise.swift in Sources */,
 				B43AAAA42BA1EA7C006C18AB /* SocialUser.swift in Sources */,
+				B40EEDD92BAAEE83001034E6 /* FeedViewModel.swift in Sources */,
 				B46C2C4B2BA9D03A000B3590 /* SocialPost.swift in Sources */,
 				B46C2C3F2BA99C6F000B3590 /* Todo.swift in Sources */,
 				B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */,
@@ -556,6 +572,14 @@
 				minimumVersion = 10.22.1;
 			};
 		};
+		B40EEDDC2BAB1A35001034E6 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -613,6 +637,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B40AC7632BA0870300D81D13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		B40EEDDD2BAB1A35001034E6 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B40EEDDC2BAB1A35001034E6 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
