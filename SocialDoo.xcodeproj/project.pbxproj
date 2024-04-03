@@ -38,6 +38,8 @@
 		B46C2C492BA9AACD000B3590 /* StackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C482BA9AACD000B3590 /* StackRouter.swift */; };
 		B46C2C4B2BA9D03A000B3590 /* SocialPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C4A2BA9D03A000B3590 /* SocialPost.swift */; };
 		B46C2C4E2BA9D6EC000B3590 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C2C4D2BA9D6EC000B3590 /* FeedView.swift */; };
+		B4BFAE872BBD982E0076B0F3 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = B4BFAE862BBD982E0076B0F3 /* GoogleMobileAds */; };
+		B4BFAE8A2BBD99FF0076B0F3 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFAE892BBD99FF0076B0F3 /* AdManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		B46C2C482BA9AACD000B3590 /* StackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRouter.swift; sourceTree = "<group>"; };
 		B46C2C4A2BA9D03A000B3590 /* SocialPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialPost.swift; sourceTree = "<group>"; };
 		B46C2C4D2BA9D6EC000B3590 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		B4BFAE882BBD983C0076B0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B4BFAE892BBD99FF0076B0F3 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				B40AC7752BA0870300D81D13 /* FirebasePerformance in Frameworks */,
 				B40AC7712BA0870300D81D13 /* FirebaseFunctions in Frameworks */,
 				B40AC76B2BA0870300D81D13 /* FirebaseCrashlytics in Frameworks */,
+				B4BFAE872BBD982E0076B0F3 /* GoogleMobileAds in Frameworks */,
 				B40AC7692BA0870300D81D13 /* FirebaseAuth in Frameworks */,
 				B40EEDDE2BAB1A35001034E6 /* SFSafeSymbols in Frameworks */,
 				B40AC7652BA0870300D81D13 /* FirebaseAnalytics in Frameworks */,
@@ -105,6 +110,7 @@
 		B40AC7542BA080F800D81D13 /* SocialDoo */ = {
 			isa = PBXGroup;
 			children = (
+				B4BFAE882BBD983C0076B0F3 /* Info.plist */,
 				B43AAAA52BA1F6BE006C18AB /* Code */,
 				B43AAAA62BA1F6C3006C18AB /* Resource */,
 			);
@@ -168,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				B40AC77A2BA087D600D81D13 /* UserManager.swift */,
+				B4BFAE892BBD99FF0076B0F3 /* AdManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -277,6 +284,7 @@
 				B40AC7762BA0870300D81D13 /* FirebaseRemoteConfig */,
 				B40AC7782BA0870300D81D13 /* FirebaseStorage */,
 				B40EEDDD2BAB1A35001034E6 /* SFSafeSymbols */,
+				B4BFAE862BBD982E0076B0F3 /* GoogleMobileAds */,
 			);
 			productName = SocialDoo;
 			productReference = B40AC7522BA080F800D81D13 /* SocialDoo.app */;
@@ -309,6 +317,7 @@
 			packageReferences = (
 				B40AC7632BA0870300D81D13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B40EEDDC2BAB1A35001034E6 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				B4BFAE852BBD982E0076B0F3 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = B40AC7532BA080F800D81D13 /* Products */;
 			projectDirPath = "";
@@ -346,6 +355,7 @@
 				B40EEDD92BAAEE83001034E6 /* FeedViewModel.swift in Sources */,
 				B46C2C4B2BA9D03A000B3590 /* SocialPost.swift in Sources */,
 				B46C2C3F2BA99C6F000B3590 /* Todo.swift in Sources */,
+				B4BFAE8A2BBD99FF0076B0F3 /* AdManager.swift in Sources */,
 				B43AAAAC2BA1F6FE006C18AB /* RootView.swift in Sources */,
 				B46C2C422BA99D9E000B3590 /* TodoListView.swift in Sources */,
 				B43AAAAA2BA1F6F6006C18AB /* OnboardingView.swift in Sources */,
@@ -489,6 +499,7 @@
 				DEVELOPMENT_TEAM = 986K2G8Q3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SocialDoo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to take pictures of your TODOs.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -520,6 +531,7 @@
 				DEVELOPMENT_TEAM = 986K2G8Q3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SocialDoo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to take pictures of your TODOs.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -578,6 +590,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.2.0;
+			};
+		};
+		B4BFAE852BBD982E0076B0F3 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -642,6 +662,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B40EEDDC2BAB1A35001034E6 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
+		};
+		B4BFAE862BBD982E0076B0F3 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4BFAE852BBD982E0076B0F3 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
